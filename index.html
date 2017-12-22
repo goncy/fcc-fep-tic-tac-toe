@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>freeCodeCamp - FE advanced projects 3 - Tic Tac Toe</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <span class="message" v-if="message">{{message}}</span>
+    <div class="box turn">
+      <span class="option" :class="{active: turn === 'user'}">Your turn</span>
+      <span class="option" :class="{active: turn === 'computer'}">Computer turn</span>
+    </div>
+    <div class="tic-tac-toe">
+      <div v-for="n in 9" class="slot" @click="selectSlot(n)">{{fillSlot(n)}}</div>
+    </div>
+    <div class="box glyph">
+      <span class="option" :class="{active: glyph === 'X'}" @click="selectGlyph('X')">X</span>
+      <span class="option" :class="{active: glyph === 'O'}" @click="selectGlyph('O')">O</span>
+    </div>
+  </div>
+  <script src="./vendors/vue.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
